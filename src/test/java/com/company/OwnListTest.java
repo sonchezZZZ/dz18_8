@@ -4,7 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-public class OwnClassTest {
+public class OwnListTest {
     OwnList subject;
 
     @BeforeEach
@@ -26,17 +26,17 @@ public class OwnClassTest {
 
     @Test
     public void getIndexByValueTest() {
-        int[] actual = new int[]{0, 1, 2};
-        int[] expected = new int[3];
+        int[] expected = new int[]{0, 1, 2};
+        int[] actual = new int[3];
         int value = 10;
         for (int i = 0; i < 3; i++) {
-            expected[i] = subject.getIndexByValue(value + i);
+            actual[i] = subject.getIndexByValue(value + i);
         }
         Assertions.assertArrayEquals(expected, actual, "Indices must be equal");
     }
 
     @Test
-    public void RemoveValueByIndexTest() {
+    public void removeValueByIndexTest() {
         int expected = subject.getByIndex(2);
         subject.removeByIndex(1);
         int actual = subject.getByIndex(1);
